@@ -30,7 +30,7 @@ func main() {
 		title := os.Args[2]
 		tasks = append(tasks, Task{Title: title, Done: false})
 		saveTasks()
-		fmt.Println("✅ Task added:", title)
+		fmt.Println("✅ Task added today:", title)
 	}
 }
 
@@ -38,4 +38,5 @@ func saveTasks() {
 	file, _ := os.Create("tasks.json")
 	defer file.Close()
 	json.NewEncoder(file).Encode(tasks)
+
 }
